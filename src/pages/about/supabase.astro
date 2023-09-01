@@ -1,15 +1,15 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import {getUser} from '../../auth';
+import Layout from "../../layouts/Layout.astro";
+import { getUser } from "../../auth";
 const user = await getUser(Astro.request);
 
 if (!user) {
-    return Astro.redirect('/login');
+  return Astro.redirect("/login");
 }
 
-import {Content} from '../content/content-supabase.md';
+import { Content } from "../content/content-supabase.md";
 ---
 
 <Layout title="About Supabase" user={user}>
-    <Content />
+  <Content />
 </Layout>

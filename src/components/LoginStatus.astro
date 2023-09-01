@@ -1,12 +1,21 @@
 ---
-const { isLoggedIn } = Astro.props as Props;
+interface Props {
+  isLoggedIn: boolean;
+}
+const { isLoggedIn } = Astro.props;
 ---
 
-<div class="text-lg pt-5 ">
-    {isLoggedIn ? (
-    <div>
+<div class="text-lg pt-5">
+  {
+    isLoggedIn ? (
+      <div>
         You are logged in 😎🎉!
-        <a href="/logout" class="underline">Log out</a>
-    </div>
-    ) : "You are not logged in 😔"}
+        <a href="/logout" class="underline">
+          Log out
+        </a>
+      </div>
+    ) : (
+      "You are not logged in 😔"
+    )
+  }
 </div>
